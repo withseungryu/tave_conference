@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>write</title>
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+    /* body, */
+    /* html {
+        text-align: center;
+        font-family: 'Do Hyeon', sans-serif;
+       
+        color: white;
+
+        background-image: url("https://pds.joins.com/news/component/htmlphoto_mmdata/201902/12/7beeb052-9929-41b2-89f5-9a9a18c8fa96.jpg");
+        background-size: 1750px;
+    } */
+    html {
+    position:relative;
+    z-index:1;
+}
+    html:after {
+    
+    font-family: 'Do Hyeon', sans-serif;
+       
+    color: white;
+    background-image:url("https://pds.joins.com/news/component/htmlphoto_mmdata/201902/12/7beeb052-9929-41b2-89f5-9a9a18c8fa96.jpg");
+    top:0;
+    left:0;
+    position:absolute;
+    background-size:1820px;
+    opacity:0.6;
+    filter:alpha(opacity=50);
+    z-index:-1;
+    content:"";
+    width:100%;
+    height:850px;
+}
+body{
+    text-align: center;
+}
+
+
+    
+
+    .button {
+        margin-top: 50px;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        background-color: #ffffff;
+        background-color: rgba( 255, 255, 255, 0.4 );
+        border-style: hidden;
+        font-size: 20pt;
+        color: #17375e;
+        font-family: 'Do Hyeon', sans-serif;
+    }
+
+    .button:hover {
+        background-color:skyblue ;
+        opacity: 0.3;
+        /* Green */
+        color: white;
+    }
+
+    .title {
+        /*text-align: center;*/
+        color: black;
+        font-size: 35pt;
+        font-weight: bold;
+	text-shadow: -3px 0 #FFFFFF, 0 3px #FFFFFF, 3px 0 #FFFFFF, 0 -3px #FFFFFF;
+
+    }
+
+  
+
+    img {
+        margin-top: 2%;
+        width: 300px;
+        height: 300px;
+    }
+
+    .title_form {
+        width: 600px;
+        height: 50px;
+        font-size: 20pt;
+        border-radius: 5%;
+    }
+    .bt1{
+        border-style: hidden;
+        border-radius: 30%;
+        font-size: 25pt;
+        width:200px;
+        height: 200px;
+    }
+    .bt2{
+        border-style: hidden;
+        border-radius: 30%;
+        margin-left: 10%;
+        width:200px;
+        height: 200px;
+    }
+    .btn_wrap{
+        
+        text-align:center;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+ 
+    
+</style>
+ 
+
+<body>
+    <div class="logo"></div>
+    <div class="title">
+        <img src="https://ifh.cc/g/hvYd4.png" /> <br>국민청원 사전지원 프로그램
+    </div>
+    <div class="btn_wrap">
+   <a href="http://127.0.0.1:8000/write"><button type="submit" class="bt1 button">글작성</button></a>
+    <a href="http://127.0.0.1:8000/word"><button type="submit" class="bt2 button">워드클라우드</button></a>
+    </div>
+
+    <div class="logo"></div>
+</body>
+
+</html>

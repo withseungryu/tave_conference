@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+
+    <meta charset="UTF-8">
+    <title>write</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+    html body {
+        background-color: #17375e;
+        color: white;
+        font-family: 'Do Hyeon', sans-serif;
+    }
+
+    ul {
+        border-bottom: solid 1px;
+        margin-bottom: 5%;
+        font-size: 15pt;
+
+    }
+
+    li {
+        display: inline;
+    }
+
+    .title {
+        text-align: center;
+        color: white;
+        font-size: 35pt;
+        margin-bottom: 10px;
+    }
+
+    img {
+        width: 100px;
+        height: 50px;
+    }
+</style>
+
+<body>
+    <div class="title">
+        <img src="http://www.president.go.kr/css/favicon_400x210.png" /> 국민청원 사전지원 프로그램
+    </div>
+    {% for article in articleList %}
+    <a href="http://127.0.0.1:8000/view/{{article.id}}">
+    <ul>
+        <li>{{article.name}}</li>
+        <li>{{ article.title }}</li>
+
+        <li>{{article.url}}</li>
+        <li>{{ article.counter}}</li>
+    </ul></a>
+    {% endfor %}
+    <h1>{{bi}}</h1>
+</body>
+
+</html>

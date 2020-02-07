@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>write</title>
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+       html {
+    position:relative;
+    z-index:1;
+}
+    html:after {
+    
+    font-family: 'Do Hyeon', sans-serif;
+       
+    color: white;
+    background-image:url("https://pds.joins.com/news/component/htmlphoto_mmdata/201902/12/7beeb052-9929-41b2-89f5-9a9a18c8fa96.jpg");
+    top:0;
+    left:0;
+    position:absolute;
+    background-size:1820px;
+    opacity:0.8;
+    filter:alpha(opacity=50);
+    z-index:-1;
+    content:"";
+    width:100%;
+    height:920px;
+}
+body{
+    font-weight: bold;
+    font-size: 13pt;
+    color:white;
+    text-align: center;
+    text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+}
+
+    .button {
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        background-color: #ffffff;
+        background-color: rgba( 255, 255, 255, 0.4 );
+        border-style: hidden;
+        font-size: 20pt;
+        color: black;
+        font-family: 'Do Hyeon', sans-serif;
+        text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF;
+    }
+
+    .button:hover {
+        background-color: #17375e;
+        /* Green */
+        color: white;
+    }
+
+    .title {
+       color: black;
+        font-size: 35pt;
+        font-weight: bold;
+	text-shadow: -3px 0 #FFFFFF, 0 3px #FFFFFF, 3px 0 #FFFFFF, 0 -3px #FFFFFF;
+    }
+
+    .form {
+
+        border-style: solid;
+        border-color: white;
+        font-family: 'Nanum Gothic', sans-serif;
+
+    }
+
+    img {
+        width: 100px;
+        height: 50px;
+    }
+
+    .title_form {
+        width: 600px;
+        height: 50px;
+        font-size: 20pt;
+        border-radius: 5%;
+    }
+
+    .content {
+        font-size: 15pt;
+
+        background-color: white;
+        border-radius: 2%;
+    }
+</style>
+
+<body>
+<h1>{{bi}}</h1>
+    <div class="title">
+        <img src="https://ifh.cc/g/hvYd4.png" /> 국민청원 사전지원 프로그램
+    </div>
+    <div class="form">
+
+        <form action=" " method='POST'>
+            <div class="form2">{{form.as_p}}</div>
+            {% csrf_token %}
+    </div>
+
+    <br />
+    <span style="color:black;" id="counter">(0자)</span>
+    <br>
+    <button type="submit" class="button">저장하기</button>
+    
+
+
+
+
+    </form>
+    <a href='http://127.0.0.1:8000/view/{{id}}'><button type="submit" class="button">분석하기</button></form>
+</body>
+<script>
+    $('.content').keyup(function (e) {
+        var content = $(this).val();
+        $('#counter').html("(" + content.length + "자)");    //글자수 실시간 카운팅
+
+        if (content.length > 2000) {
+            alert("최대 200자까지 입력 가능합니다.");
+            $(this).val(content.substring(0, 2000));
+            $('#counter').html("(초과)");
+        }
+        var last_length = content.length;
+        $('#count').val(last_length);
+
+    });
+
+</script>
+
+</html>

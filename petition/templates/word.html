@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+    <meta charset="UTF-8">
+    <title>write</title>
+
+    <script src="//code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css?family=Do+Hyeon');
+    @import url('https://fonts.googleapis.com/css?family=Nanum+Gothic&display=swap');
+       html {
+    position:relative;
+    z-index:1;
+}
+    html:after {
+    
+    font-family: 'Do Hyeon', sans-serif;
+       
+    color: white;
+    background-image:url("https://pds.joins.com/news/component/htmlphoto_mmdata/201902/12/7beeb052-9929-41b2-89f5-9a9a18c8fa96.jpg");
+    top:0;
+    left:0;
+    position:absolute;
+    background-size:1820px;
+    opacity:0.8;
+    filter:alpha(opacity=50);
+    z-index:-1;
+    content:"";
+    width:100%;
+    height:920px;
+}
+body{
+    font-weight: bold;
+    font-size: 13pt;
+    color:white;
+    text-align: center;
+    text-shadow: -1px 0 #000000, 0 1px #000000, 1px 0 #000000, 0 -1px #000000;
+}
+
+    .button {
+        margin-top: 2%;
+        -webkit-transition-duration: 0.4s;
+        /* Safari */
+        transition-duration: 0.4s;
+        background-color: #ffffff;
+        background-color: rgba( 255, 255, 255, 0.4 );
+        border-style: hidden;
+        font-size: 20pt;
+        color: black;
+        font-family: 'Do Hyeon', sans-serif;
+        text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF;
+    }
+
+    .button:hover {
+        background-color: #17375e;
+        /* Green */
+        color: white;
+    }
+
+    .title {
+       
+        border-bottom: solid white;
+       color: black;
+        font-size: 35pt;
+        font-weight: bold;
+	text-shadow: -3px 0 #FFFFFF, 0 3px #FFFFFF, 3px 0 #FFFFFF, 0 -3px #FFFFFF;
+    }
+      img {
+        width: 100px;
+        height: 50px;
+    }
+    .ca1, .ca2 ,.ca3,.ca4,.ca5,.ca6,.ca7,.ca8,.ca9,.ca10,.ca11,.ca12,.ca13,.ca14{
+        display:none;
+        margin-top: 1%;
+    
+    }
+    .img1, .img2, .img3, .img4, .img5, .img6, .img7, .img8, .img9, .img10, .img11, .img12, .img13, .img14{
+        width: 500px;
+        height: 500px;
+        border-style:solid;
+        border-color: black;
+        border-width: thick;
+    }
+   .mid_wrap{
+       margin-top:2%;
+   }
+   .radio{
+       margin-top: 3%;
+       font-size: 14pt;
+   }
+    .bii{
+        margin-top: -2%;
+    }
+    .sp{
+        text-align: center;
+        color: black;
+        text-shadow: -1px 0 #FFFFFF, 0 1px #FFFFFF, 1px 0 #FFFFFF, 0 -1px #FFFFFF;
+        font-size: 20pt;
+    
+    }
+    .menu{
+        padding-top: 1%;
+        height: 50px;
+        border-style:solid;
+        border-color:white;
+        
+    }
+</style>
+
+<body>
+
+    <div class="title">
+        <img src="https://ifh.cc/g/hvYd4.png" /> 국민청원 사전지원 프로그램
+    </div>
+    <div class="radio">
+<div class='menu'>    
+<label><input type='radio' name='fruit' value='정치개혁'/>정치개혁</label>
+<label><input type='radio' name='fruit' value='외교/통일/국방'/>외교/통일/국방</label>
+<label><input type='radio' name='fruit' value='일자리' />일자리</label>
+<label><input type='radio' name='fruit' value='보건복지' />보건복지</label>
+<label><input type='radio' name='fruit' value='육아/교육' />육아/교육</label>
+<label><input type='radio' name='fruit' value='일자리' />일자리</label>
+<label><input type='radio' name='fruit' value='저출산/고령화대책' />저출산/고령화대책</label>
+<label><input type='radio' name='fruit' value='행정' />행정</label>
+<label><input type='radio' name='fruit' value='반려동물' />반려동물</label>
+<label><input type='radio' name='fruit' value='교통/건축/국토' />교통/건축/국토</label>
+<label><input type='radio' name='fruit' value='경제민주화' />경제민주화</label>
+<label><input type='radio' name='fruit' value='인권/성평등' />인권</label>
+<label><input type='radio' name='fruit' value='문화/예술/체육/언론' />문화/예술/체육/언론</label>
+<label><input type='radio' name='fruit' value='기타'/>기타</label></div>
+<br>
+<div class="bii">
+<button class="button" id='btn-show-checked'>확인하기</button></div>
+    </div>
+    <div class="mid_wrap">
+    {% load staticfiles %}
+    <span class="ca1 sp">정치개혁</span><div class="ca1"><img class="img1" src="{% static "img/wc1.png" %}"alt="없다"/></div>
+    <span class="ca2 sp">외교/통일/국방</span><div class="ca2"><img   class="img2" src="{% static "img/wc2.png" %}"alt="없다"/></div>
+    <span class="ca3 sp">일자리</span><div class="ca3"><img  class="img3" src="{% static "img/wc3.png" %}"alt="없다"/></div>
+    <span class="ca4 sp">보건복지</span><div class="ca4"><img  class="img4" src="{% static "img/wc4.png" %}"alt="없다"/></div>
+    <span class="ca5 sp">육아/교육</span><div class="ca5"><img  class="img5" src="{% static "img/wc5.png" %}"alt="없다"/></div>
+    <span class="ca6 sp">일자리</span><div class="ca6"><img  class="img6" src="{% static "img/wc6.png" %}"alt="없다"/></div>
+    <span class="ca7 sp">저출산/고령화대책</span><div class="ca7"><img   class="img7" src="{% static "img/wc7.png" %}"alt="없다"/></div>
+    <span class="ca8 sp">행정</span><div class="ca8"><img  class="img8" src="{% static "img/wc8.png" %}" alt="없다"/></div>
+    <span class="ca9 sp">반려동물</span><div class="ca9"><img  class="img9" src="{% static "img/wc9.png" %}" alt="없다"/></div>
+    <span class="ca10 sp">교통/건축/국토</span><div class="ca10"><img  class="img10" src="{% static "img/wc10.png" %}" alt="없다"/></div>
+    <span class="ca11 sp">경제민주화</span><div class="ca11"><img  class="img11" src="{% static "img/wc11.png" %}" alt="없다"/></div>
+    <span class="ca12 sp">인권/성평등</span><div class="ca12"><img  class="img12" src="{% static "img/wc12.png" %}" alt="없다"/></div>
+    <span class="ca13 sp">문화/예술/체육/언론</span><div class="ca13"><img  class="img13" src="{% static "img/wc13.png" %}" alt="없다"/></div>
+    <span class="ca14 sp">기타</span><div class="ca14"><img  class="img14" src="{% static "img/wc14.png" %}" alt="없다"/></div>
+    </div>
+
+
+</body>
+<script>
+$(function() {
+    $("#btn-show-checked").click(function() {
+        alert( $("input[name=fruit]:checked").val() );
+        jb= $("input[name=fruit]:checked").val();
+        if( jb=='정치개혁'){
+            $(".ca1").css("display","block");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+       
+        }else if(jb=='외교/통일/국방'){
+            $(".ca1").css("display","none");
+            $(".ca2").css("display","block");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='일자리'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","block");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+ 
+        }else if(jb=='보건복지'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","block");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='육아/교육'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","block");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+ 
+        }else if(jb=='일자리'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","block");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='저출산/고령화대책'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","block");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='행정'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","block");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='반려동물'){
+            $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","block");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='교통/건축/국토'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","block");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='경제민주화'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","block");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='인권/성평등'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","block");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+
+        }else if(jb=='문화/예술/체육/언론'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","block");
+            $(".ca14").css("display","none");
+           
+        }
+        else if(jb=='기타'){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","block");
+           
+        }else if(jb ==''){
+             $(".ca1").css("display","none");
+            $(".ca2").css("display","none");
+            $(".ca3").css("display","none");
+            $(".ca4").css("display","none");
+            $(".ca5").css("display","none");
+            $(".ca6").css("display","none");
+            $(".ca7").css("display","none");
+            $(".ca8").css("display","none");
+            $(".ca9").css("display","none");
+            $(".ca10").css("display","none");
+            $(".ca11").css("display","none");
+            $(".ca12").css("display","none");
+            $(".ca13").css("display","none");
+            $(".ca14").css("display","none");
+           
+        }
+        
+        
+    });
+});
+</script>
+
+</html>
